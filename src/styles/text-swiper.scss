@@ -1,0 +1,43 @@
+[data-text-swiper] {
+  position: relative;
+  height: 1.4em; // standard line-height
+  span {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    // transition: clip-path 500ms, transform 500ms;
+    clip-path: inset(0 0 0 0);
+
+    animation-duration: 2s;
+    animation-delay: 0;
+    animation-fill-mode: forwards;
+
+    animation-name: a;
+
+    &.is-active {
+      clip-path: inset(0 100% 0 0);
+
+      animation-delay: 200ms;
+
+      animation-name: nA;
+    }
+  }
+}
+
+@keyframes nA {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes a {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 100%);
+  }
+}

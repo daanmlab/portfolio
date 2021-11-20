@@ -1,0 +1,66 @@
+section#Hello {
+	color: #fff !important;
+
+	.title {
+		color: inherit;
+		font-size: 3em;
+		text-transform: uppercase;
+	}
+
+	.subtitle {
+		color: inherit;
+
+	}
+
+	.scrolldown-wrapper {
+		$size: 50px;
+		left: 50%;
+		position: absolute;
+		text-align: center;
+		bottom: 0;
+		transform: translate(-50%, -50%);
+
+
+		.scrolldown {
+			border: 2px solid #FFFFFF;
+			border-radius: 30px;
+			height: $size * 1.53;
+			margin: 0 auto 8px;
+			text-align: center;
+			width: $size;
+		}
+
+		.scrolldown-p1,
+		.scrolldown-p2 {
+			animation-duration: 1.5s;
+			animation-name: scrolldown;
+			animation-iteration-count: infinite;
+			fill: #FFFFFF;
+			r: $size * .1;
+
+		}
+
+		.scrolldown-p2 {
+			animation-delay: .75s;
+		}
+
+		@keyframes scrolldown {
+			0% {
+				opacity: 0;
+				transform: translate(0, 40%);
+			}
+
+			50% {
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+
+			100% {
+				opacity: 0;
+				transform: translate(0, -40%);
+			}
+
+		}
+	}
+
+}

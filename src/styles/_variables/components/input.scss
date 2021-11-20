@@ -1,0 +1,39 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+input.input {
+  padding: 1.4em;
+  &::placeholder {
+    font-style: italic;
+  }
+
+  transition: box-shadow 200ms, background-color 400ms, transform 200ms;
+
+  &:focus {
+    color: $black;
+    background-color: $white;
+    transform: translateY(-2px) translateX(1px);
+  }
+}
+
+$input-color: $grey-dark;
+$input-background-color: $white-ter;
+$input-border-color: none;
+$input-shadow: none;
+
+$input-hover-color: none;
+$input-hover-border-color: none;
+
+$input-focus-color: $black;
+$input-focus-border-color: $white-ter;
+$input-focus-box-shadow-size: 0 1px 0.5em;
+$input-focus-box-shadow-color: $grey-lightest;
+
+$input-disabled-color: none;
+$input-disabled-background-color: none;
+$input-disabled-border-color: none;
+
+$input-arrow: none;
+$input-icon-color: none;
+$input-icon-active-color: none;
+// $input-radius: 1em;

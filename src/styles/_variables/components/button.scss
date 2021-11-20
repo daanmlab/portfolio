@@ -1,0 +1,124 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+@import "../colors.scss";
+@import "../radius.scss";
+
+.button {
+  border-radius: $radius !important;
+  overflow: hidden;
+  border: none !important;
+  overflow: hidden;
+
+  transition: background-color 100ms 100ms, box-shadow 100ms 100ms;
+
+  .__ {
+    &neutral,
+    &success,
+    &danger {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 300ms;
+    }
+  }
+
+  &.__ {
+    &neutral {
+      background-color: $primary !important;
+      &:focus {
+        box-shadow: 0 0 0 0.125em bulmaRgba($primary, 0.25) !important;
+      }
+      .__neutral {
+        transform: translateX(0) translateZ(0);
+      }
+    }
+    &success {
+      background-color: $success !important;
+      &:focus {
+        box-shadow: 0 0 0 0.125em bulmaRgba($success, 0.25) !important;
+      }
+      pointer-events: none;
+      .__success {
+        transform: translateX(0);
+      }
+      .__neutral {
+        transform: translateX(-100%);
+      }
+    }
+    &danger {
+      background-color: $danger !important;
+      &:focus {
+        box-shadow: 0 0 0 0.125em bulmaRgba($danger, 0.25) !important;
+      }
+      pointer-events: none;
+
+      .__danger {
+        transform: translateX(0);
+      }
+      .__neutral {
+        transform: translateX(-100%);
+      }
+    }
+    &loading {
+      pointer-events: none;
+
+      &::after {
+        @extend %loader;
+        @include center(1em);
+        position: absolute !important;
+      }
+      .__neutral {
+        transform: translateX(0);
+        & > * {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// $button-color: none;
+// $button-background-color: none;
+// $button-family: none;
+// $button-border-color: none;
+// $button-border-width: none;
+$button-padding-vertical: 1.4em;
+$button-padding-horizontal: 1.4em;
+
+// $button-hover-color: none;
+// $button-hover-border-color: none;
+
+// $button-focus-color: none;
+// $button-focus-border-color: none;
+// $button-focus-box-shadow-size: none;
+// $button-focus-box-shadow-color: none;
+
+// $button-active-color: none;
+// $button-active-border-color: none;
+
+// $button-text-color: none;
+// $button-text-decoration: none;
+// $button-text-hover-background-color: none;
+// $button-text-hover-color: none;
+
+// $button-ghost-background: none;
+// $button-ghost-border-color: none;
+// $button-ghost-color: none;
+// $button-ghost-decoration: none;
+// $button-ghost-hover-color: none;
+// $button-ghost-hover-decoration: none;
+
+// $button-disabled-background-color: none;
+// $button-disabled-border-color: none;
+// $button-disabled-shadow: none;
+// $button-disabled-opacity: none;
+
+// $button-static-color: none;
+// $button-static-background-color: none;
+// $button-static-border-color: none;
+
+// $button-colors: none;

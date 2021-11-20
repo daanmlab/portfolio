@@ -1,0 +1,37 @@
+@import './_variables';
+
+body {
+  // background-color: rgb(20, 20, 20);
+  min-height: 100vh;
+  opacity: 1 !important;
+
+  user-select: none;
+}
+
+html {
+  background-color: rgb(20, 20, 20);
+}
+
+.columns {
+  margin-bottom: 0 !important;
+  margin-top: 0;
+}
+
+main {
+  scroll-snap-type: y mandatory;
+  position: relative;
+  max-height: 100vh;
+  overflow-y: auto;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+}

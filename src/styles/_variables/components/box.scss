@@ -1,0 +1,11 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+$box-color: none;
+$box-background-color: $scheme-main;
+$box-radius: $radius-large;
+$box-shadow: 0 1px 2em 0.25em rgba($scheme-invert, 0.1),
+  0 0px 0 1px rgba($scheme-invert, 0.02);
+$box-padding: 2em;
+$box-link-hover-shadow: none;
+$box-link-active-shadow: none;

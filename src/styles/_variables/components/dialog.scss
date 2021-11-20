@@ -1,0 +1,21 @@
+// Import Bulma's core
+// @import "~bulma/sass/utilities/_all";
+@import "../colors.scss";
+@import "../radius.scss";
+
+.dialog.modal {
+  .modal-card {
+    .modal-card-body {
+      &.is-titleless {
+        border-top-left-radius: $radius-large !important;
+        border-top-right-radius: $radius-large !important;
+      }
+    }
+    .modal-card-foot {
+      padding: 1em;
+      .button {
+        padding: 0;
+      }
+    }
+  }
+}

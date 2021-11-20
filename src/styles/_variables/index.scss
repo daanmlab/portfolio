@@ -1,0 +1,15 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+@import "./colors.scss";
+@import "./text.scss";
+@import "./radius.scss";
+
+@import "./components/index.scss";
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+$primary-font-family: "Montserrat";
+$secondary-font-family: "Lato";
