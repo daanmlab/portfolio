@@ -51,10 +51,10 @@
     e.src = loader.images[e.dataset.src ?? 0];
     delete e.dataset.src;
   });
-
-  // Create cursor
-  const { Cursor } = await import("./classes/Cursor");
-  const cursor = new Cursor({});
+    // Create cursor
+    const { Cursor } = await import("./classes/Cursor");
+    const cursor = new Cursor({});
+  
 
   // Create magnetice buttons
   // const { MagneticButton } = await import("./classes/Magnetic");

@@ -67,12 +67,19 @@ export class Cursor {
   setListeners() {
     const debouncedOnMouseMove = debounce(this.onMouseMove, 10);
 
-    window.addEventListener("mousemove", debouncedOnMouseMove, {
-      passive: true,
-    });
+    window.addEventListener("mousemove", debouncedOnMouseMove);
     window.addEventListener("mouseout", (e) => this.onMouseOut(e));
     window.addEventListener("mousedown", (e) => this.onMouseDown(e));
     window.addEventListener("mouseup", (e) => this.onMouseUp(e));
+
+    window.addEventListener("touchstart", () => {
+      document.body.removeChild(this.elements.cursor);
+      document.body.removeChild(this.elements.follower);
+      window.removeEventListener("mousemove", debouncedOnMouseMove);
+      window.removeEventListener("mouseout", (e) => this.onMouseOut(e));
+      window.removeEventListener("mousedown", (e) => this.onMouseDown(e));
+      window.removeEventListener("mouseup", (e) => this.onMouseUp(e));
+    });
   }
 
   onMouseMove = (e: MouseEvent) => {
