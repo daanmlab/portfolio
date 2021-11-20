@@ -1,5 +1,4 @@
 import "../styles/button.scss";
-
 import gsap from "gsap/gsap-core";
 
 export class MagneticButton {

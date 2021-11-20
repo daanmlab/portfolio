@@ -1,3 +1,7 @@
+import gsap from "gsap/gsap-core";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 (async () => {
   const { Loader } = await import("./classes/Loader");
 
@@ -46,31 +50,47 @@
   const elementsThatNeedSrc = document.querySelectorAll(
     "[data-src]"
   ) as NodeListOf<HTMLImageElement>;
-
   elementsThatNeedSrc.forEach((e) => {
     e.src = loader.images[e.dataset.src ?? 0];
     delete e.dataset.src;
   });
-    // Create cursor
-    const { Cursor } = await import("./classes/Cursor");
-    const cursor = new Cursor({});
-  
 
-  // Create magnetice buttons
-  // const { MagneticButton } = await import("./classes/Magnetic");
-  // const magneticButtons = document.querySelectorAll("[data-magnetic]");
-  // Array.from(magneticButtons).map((a) => {
-  //   const element = a as HTMLElement;
-  //   new MagneticButton({
-  //     element,
-  //   });
-  // });
+  // Create sidemenu
+  const mainElement = document.querySelector("main");
+  console.log(mainElement);
+  const { SideMenu } = await import("./classes/SideMenu");
+  new SideMenu({
+    items: [
+      {
+        name: "Hello",
+        onClick: () => {
+          gsap.to(mainElement, {
+            duration: 1,
+            scrollTo: "#Hello",
+            ease: "circ.inOut",
+          });
+        },
+      },
+      {
+        name: "Projects",
+        onClick: () => {
+          gsap.to(mainElement, {
+            duration: 1,
+            scrollTo: "#Projects",
+            ease: "circ.inOut",
+          });
+        },
+      },
+    ],
+  });
+
+  // Create cursor
+  const { Cursor } = await import("./classes/Cursor");
+  const cursor = new Cursor({});
 })();
 
+// Styles
 import "./styles/sections/hello.scss";
 import "./styles/sections/projects.scss";
-// Styles
-import "./styles/main.scss";
-// import "./styles/background.scss";
 
-// import "./styles/sections/about.scss";
+import "./styles/main.scss";

@@ -50,6 +50,8 @@ export class Cursor {
 
     gsap.set(this.elements.cursor, { xPercent: -50, yPercent: -50 });
 
+    this.elements.cursor.style.display = "none";
+
     document.body.appendChild(this.elements.cursor);
   }
 
@@ -60,6 +62,8 @@ export class Cursor {
     this.elements.follower.duration = 0.3;
 
     gsap.set(this.elements.follower, { xPercent: -50, yPercent: -50 });
+
+    this.elements.follower.style.display = "none";
 
     document.body.appendChild(this.elements.follower);
   }
@@ -97,6 +101,7 @@ export class Cursor {
 
     if (!isStickyButton) {
       Object.values(this.elements).forEach((element) => {
+        element.style.display = "inline-block";
         gsap.to(element, {
           x: e.clientX,
           y: e.clientY,

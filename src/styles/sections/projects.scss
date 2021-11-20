@@ -1,6 +1,8 @@
 @import '~bulma';
 
 #Projects {
+	padding: 1em 0;
+
 	.title {
 		color: white;
 		margin: 3em 0 1em;
@@ -95,18 +97,5 @@
 			}
 		}
 
-		// <div class="image-wrapper">
-		//   <img data-src="images/broodhuys.png" alt="broodhuys page" />
-		// </div>
-		// <div class="text">
-		//   <p class="name">'t Broodhuys</p>
-		//   <a href="https://www.bakkerijbroodhuys.nl/" class="link"
-		//     >Have a look: https://www.bakkerijbroodhuys.nl/</a
-		//   >
-		//   <p class="date">9 / 2020</p>
-		//   <p class="description">
-		//     I made this while working for Konnect Kit, was a fun project
-		//   </p>
-		// </div>
 	}
 }
