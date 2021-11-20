@@ -33,7 +33,7 @@
         }
       ),
     ],
-    images: ["images/broodhuys.png", "images/crest.png"],
+    images: ["images/broodhuys.png", "images/crest.png", "images/incaze.png"],
   });
 
   await loader.load();
