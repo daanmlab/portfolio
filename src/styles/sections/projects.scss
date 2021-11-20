@@ -1,3 +1,5 @@
+@import '~bulma';
+
 #Projects {
 	.title {
 		color: white;
@@ -6,6 +8,12 @@
 	}
 
 	.project {
+		@include touch {
+			.text {
+				padding-top: 0 !important;
+			}
+
+		}
 
 		&:not(:first) {
 			margin-top: 5em !important;
@@ -24,7 +32,9 @@
 			padding: 3em;
 
 
-			img {}
+			img {
+				border-radius: .7em;
+			}
 		}
 
 		.text {
@@ -65,20 +75,23 @@
 				}
 			}
 
+			.tech {
+				margin-top: .5em;
+
+				color: #ffffff99;
+				padding-left: 1rem;
+				font-size: 1em;
+				font-weight: 900;
+
+				text-transform: uppercase;
+			}
+
 			.link {
-				color: white;
-				margin-left: 1rem;
-				font-size: 1.2em;
+				margin-top: .5em;
+				margin-left: 1rem !important;
 				font-weight: 600;
-
-				transition: opacity 200ms;
-
-				opacity: .5;
-
-				&:hover {
-					opacity: 1;
-
-				}
+				// border: 3px solid white !important;
+				box-shadow: 0 0 40px 0 #00000047;
 			}
 		}
 
