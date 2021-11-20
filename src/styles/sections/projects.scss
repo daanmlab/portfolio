@@ -29,6 +29,9 @@
 
 		.text {
 			padding: 6em;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 
 			.date {
 				color: #ffffffbb;
