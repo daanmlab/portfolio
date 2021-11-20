@@ -21,23 +21,13 @@ gsap.registerPlugin(ScrollToPlugin);
       new FontFace("Lato", "url('/fonts/Lato/Lato-Bold.ttf')", {
         weight: "700",
       }),
-
-      new FontFace(
-        "Montserrat",
-        "url('/fonts/Montserrat/Montserrat-Light.ttf')",
-        {
-          weight: "300",
-        }
-      ),
-      new FontFace(
-        "Montserrat",
-        "url('/fonts/Montserrat/Montserrat-Regular.ttf')",
-        {
-          weight: "400",
-        }
-      ),
     ],
-    images: ["images/broodhuys.png", "images/crest.png", "images/incaze.png"],
+    images: [
+      "images/broodhuys.png",
+      "images/crest.png",
+      "images/incaze.png",
+      "images/bewitt.png",
+    ],
   });
 
   await loader.load();

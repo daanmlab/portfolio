@@ -6,7 +6,10 @@ const path = require("path");
 const isDevelopment = process.env.NODE_ENV === "development";
 
 module.exports = {
-  entry: path.resolve(__dirname, "../src/script.ts"),
+  entry: [
+    path.resolve(__dirname, "../src/script.ts"),
+    // path.resolve(__dirname, "../src/index.ejs"),
+  ],
   output: {
     hashFunction: "xxhash64",
     filename: "bundle.[contenthash].js",
@@ -27,7 +30,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: [".ts", ".js", ".json"],
+    extensions: [".ts", ".ejs", ".js", ".json"],
   },
   module: {
     rules: [
