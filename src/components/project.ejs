@@ -1,0 +1,22 @@
+<div class="columns project">
+  <div class="column is-7 image-wrapper">
+    <a href="<%= project.link %>" target="_blank" class="link">
+      <img data-src="<%= project.image %>" alt="<%= project.name %>" />
+    </a>
+  </div>
+  <div class="column is-5 text">
+    <p class="date"><%= project.date %></p>
+    <p class="name"><%= project.name %></p>
+
+    <p class="description"><%= project.description %></p>
+    <p class="tech"><%= project.tech %></p>
+    <a
+      href="<%= project.link %>"
+      target="_blank"
+      class="link button is-primary"
+    >
+      <%= project.link.split('/').filter(a => a.includes('.com') ||
+      a.includes('.nl') )[0] %></a
+    >
+  </div>
+</div>

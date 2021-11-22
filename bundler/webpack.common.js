@@ -21,7 +21,51 @@ module.exports = {
       patterns: [{ from: path.resolve(__dirname, "../static") }],
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/index.html"),
+      template: `!!ejs-compiled-loader!${path.resolve(
+        __dirname,
+        "../src/index.ejs"
+      )}`,
+      templateParameters: {
+        name: "daan balm",
+        projects: [
+          {
+            date: "2 / 2021",
+            name: "Bewitt",
+            description:
+              "Bewitt is a mobile app, used in IRL/online events. I worked on this while working at Konnect Kit.",
+            tech: "JAVASCRIPT | BULMA | SCSS | VUEJS2 | IOSYSTEMS",
+            link: "https://bewitt.com/",
+            image: "images/bewitt.png",
+          },
+          {
+            date: "9 / 2020",
+            name: "'t Broodhuys",
+            description:
+              "bakkerijbroodhuys.nl is an e-commerce website that is used for selling artisanal baked goods, this was one of the first e-commerce websites I made and brought some teachable moments.",
+            tech: "JAVASCRIPT | BULMA | SCSS | VUEJS2 | IOSYSTEMS",
+            link: "https://bakkerijbroodhuys.nl/",
+            image: "images/broodhuys.png",
+          },
+          {
+            date: "1 / 2020",
+            name: "Crest",
+            description:
+              "Crest is a credit management tool where I worked on the front-end. This was while I was working at TogatherFinance in Amsterdam. I got a lot of freedom with the design choices and chose neo-morphism as my main inspiration.",
+            tech: "JAVASCRIPT | SCSS | VUEJS2 | PHP | MYSQL | LARAVEL",
+            link: "https://youtube.com/watch?v=C87rltn67EM",
+            image: "images/crest.png",
+          },
+          {
+            date: "10 / 2019",
+            name: "Incaze",
+            description:
+              "This is the landing page for Incaze, designed by Mediatribe, build by me.",
+            tech: "HTML | CSS | JAVASCRIPT",
+            link: "https://incaze.nl/",
+            image: "images/incaze.png",
+          },
+        ],
+      },
       minify: true,
     }),
     new MiniCSSExtractPlugin({
