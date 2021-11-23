@@ -1,0 +1,48 @@
+@import '~bulma';
+@import '../_variables/radius.scss';
+
+
+#Socials {
+	padding: 1em 0;
+	margin-bottom: 3em;
+
+	.title {
+		color: white;
+		margin: 3em 0 1em;
+		letter-spacing: .2rem;
+	}
+
+
+	.container {
+		display: flex;
+		justify-content: center;
+
+
+		.social--button {
+			display: flex;
+			padding: 1em;
+			background-color: white;
+			border-radius: $radius;
+			margin: 0 2em;
+
+			img {
+				height: 3em;
+			}
+		}
+
+		@include touch {
+			flex-direction: column;
+			align-items: center;
+
+			.social--button {
+				margin: 2em;
+
+				img {
+					pointer-events: none;
+				}
+			}
+		}
+	}
+
+
+}

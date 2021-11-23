@@ -27,23 +27,27 @@ gsap.registerPlugin(ScrollToPlugin);
       "images/crest.png",
       "images/incaze.png",
       "images/bewitt.png",
+      "icons/at.svg",
+      "icons/github-alt.svg",
+      "icons/linkedin-alt.svg",
     ],
   });
 
   await loader.load();
 
-  // @ts-ignore
-  const { Gradient } = await import("./classes/pocoloco/index.js");
-  new Gradient().initGradient("#Canvas");
-
   // Image Loading/Replace base64
   const elementsThatNeedSrc = document.querySelectorAll(
     "[data-src]"
   ) as NodeListOf<HTMLImageElement>;
+  console.log(loader.images);
   elementsThatNeedSrc.forEach((e) => {
     e.src = loader.images[e.dataset.src ?? 0];
     delete e.dataset.src;
   });
+
+  // @ts-ignore
+  const { Gradient } = await import("./classes/pocoloco/index.js");
+  new Gradient().initGradient("#Canvas");
 
   // Create sidemenu
   const mainElement = document.querySelector("main");
@@ -82,5 +86,6 @@ gsap.registerPlugin(ScrollToPlugin);
 // Styles
 import "./styles/sections/hello.scss";
 import "./styles/sections/projects.scss";
+import "./styles/sections/socials.scss";
 
 import "./styles/main.scss";

@@ -14,6 +14,20 @@ const debounce = function <T = unknown>(fn: (e: T) => unknown, timeout = 300) {
   };
 };
 
+const once = function <T = unknown>(fn: (e: T) => unknown) {
+  let done = false;
+  return (e: T) => {
+    if (!done) {
+      done = true;
+      fn(e);
+    }
+  };
+};
+
+const onceSetDisplay = once<HTMLSpanElement>((element) => {
+  element.style.display = "inline-block";
+});
+
 export class Cursor {
   elements: Record<string, CursorElement> = {
     cursor: document.createElement("span"),
@@ -87,112 +101,35 @@ export class Cursor {
   }
 
   onMouseMove = (e: MouseEvent) => {
-    const {
-      nodeName,
-      dataset,
-      offsetLeft,
-      offsetWidth,
-      offsetTop,
-      offsetHeight,
-    } = e.target as HTMLElement;
+    onceSetDisplay(this.elements.cursor);
+    onceSetDisplay(this.elements.follower);
+
+    const { nodeName } = e.target as HTMLElement;
 
     const isClickable = ["BUTTON", "A"].includes(nodeName);
-    const isStickyButton = dataset.stickyButton !== undefined;
 
-    if (!isStickyButton) {
-      Object.values(this.elements).forEach((element) => {
-        element.style.display = "inline-block";
-        gsap.to(element, {
-          x: e.clientX,
-          y: e.clientY,
-          scale: 1,
-          duration: element.duration,
-          overwrite: true,
-        });
+    Object.values(this.elements).forEach((element) => {
+      element.style.display = "inline-block";
+      gsap.to(element, {
+        x: e.clientX,
+        y: e.clientY,
+        scale: 1,
+        duration: element.duration,
+        overwrite: true,
       });
-    }
+    });
 
-    switch (true) {
-      case isStickyButton:
-        {
-          // const { x, y } = {
-          //   x: offsetLeft - 15,
-          //   y: offsetTop + offsetHeight * 0.5,
-          // };
+    if (isClickable) {
+      this.elements.cursor.style.width = `2em`;
+      this.elements.cursor.style.height = `2em`;
+      this.elements.follower.style.height = `1.4em`;
+      this.elements.follower.style.width = `1.4em`;
+    } else {
+      this.elements.cursor.style.width = ``;
+      this.elements.cursor.style.height = ``;
 
-          const {
-            x: tX,
-            y: tY,
-            height,
-            width,
-          } = (e.target as HTMLElement).getBoundingClientRect();
-
-          let x = tX + width * 0.5;
-          let y = tY + height * 0.5;
-          let size = "1em";
-
-          switch (dataset.stickyButton) {
-            case "centered":
-              {
-                x = tX + width * 0.5;
-                y = tY + height * 0.5;
-                size = `${height * 2}px`;
-              }
-              break;
-            case "left":
-              {
-                x = tX - 30;
-                y = tY + height * 0.5;
-                size;
-              }
-              break;
-            default: {
-              x = tX + width * 0.5;
-              y = tY + height * 0.5;
-              size = `${height * 2}px`;
-            }
-          }
-
-          gsap.to(this.elements.cursor, {
-            x,
-            y,
-            scale: 1,
-            duration: this.elements.cursor.duration,
-            overwrite: true,
-          });
-          gsap.to(this.elements.follower, {
-            x: e.clientX,
-            y: e.clientY,
-            scale: 1,
-            duration: this.elements.follower.duration,
-            overwrite: true,
-          });
-
-          this.elements.cursor.style.width = size;
-          this.elements.cursor.style.height = size;
-
-          this.elements.follower.style.height = `.5em`;
-          this.elements.follower.style.width = `.5em`;
-        }
-        break;
-      case isClickable:
-        {
-          this.elements.cursor.style.width = `2em`;
-          this.elements.cursor.style.height = `2em`;
-          this.elements.follower.style.height = `1.4em`;
-          this.elements.follower.style.width = `1.4em`;
-        }
-        break;
-
-      default:
-        {
-          this.elements.cursor.style.width = ``;
-          this.elements.cursor.style.height = ``;
-
-          this.elements.follower.style.height = ``;
-          this.elements.follower.style.width = ``;
-        }
-        break;
+      this.elements.follower.style.height = ``;
+      this.elements.follower.style.width = ``;
     }
 
     // offsetLeft,

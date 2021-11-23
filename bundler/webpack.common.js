@@ -65,6 +65,20 @@ module.exports = {
             image: "images/incaze.png",
           },
         ],
+        socials: [
+          {
+            icon: "icons/at.svg",
+            href: "mailto:daanmlab@gmail.com",
+          },
+          {
+            icon: "icons/linkedin-alt.svg",
+            href: "https://www.linkedin.com/in/daanbalm/",
+          },
+          {
+            icon: "icons/github-alt.svg",
+            href: "https://github.com/daanmlab",
+          },
+        ],
       },
       minify: true,
     }),

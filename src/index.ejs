@@ -67,6 +67,19 @@
         <% projects.forEach(function(project){ %> <%- include
         ./components/project.ejs -%> <% }); %>
       </section>
+      <section id="Socials">
+        <div class="container has-text-centered">
+          <p class="title is-size-3">Socials</p>
+        </div>
+
+        <div class="container has-text-centered">
+          <% socials.forEach(function(social){ %>
+          <a class="social--button" href="<%- social.href -%>">
+            <img data-src="<%= social.icon %>" alt="<%= social.icon %>" />
+          </a>
+          <% }); %>
+        </div>
+      </section>
     </main>
   </body>
 </html>
