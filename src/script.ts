@@ -75,6 +75,16 @@ gsap.registerPlugin(ScrollToPlugin);
           });
         },
       },
+      {
+        name: "Socials",
+        onClick: () => {
+          gsap.to(mainElement, {
+            duration: 1,
+            scrollTo: "#Socials",
+            ease: "circ.inOut",
+          });
+        },
+      },
     ],
   });
 
