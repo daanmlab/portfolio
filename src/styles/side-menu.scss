@@ -29,7 +29,6 @@ body {
 
       ul {
         li {
-          color: white;
 
           &::before,
           &::after {
@@ -53,6 +52,7 @@ body {
         position: relative;
         display: inline-block;
         width: min-content;
+        color: white;
 
         margin-left: 2rem;
         margin-bottom: 0.3em;
