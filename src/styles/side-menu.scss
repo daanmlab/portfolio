@@ -120,6 +120,7 @@ body {
       position: absolute;
       height: 18%;
       backdrop-filter: invert(1) grayscale(1) contrast(100);
+      -webkit-backdrop-filter: invert(1) grayscale(1) contrast(100);
       width: 100%;
       transition: width 200ms, transform 200ms, opacity 200ms;
       transition-timing-function: ease-in;
