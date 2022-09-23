@@ -34,7 +34,7 @@ module.exports = {
             description:
               "A landing page for simpeldeb",
             tech: "JAVASCRIPT | BULMA | SCSS | NUXT",
-            link: "https://simpeldeb.com/",
+            link: "https://simpeldeb.nl/",
             image: "images/simpeldeb-landing-page.png",
           },
           {
