@@ -1,9 +1,9 @@
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCSSExtractPlugin = require("mini-css-extract-plugin")
+const path = require("path")
 
-const isDevelopment = process.env.NODE_ENV === "development";
+const isDevelopment = process.env.NODE_ENV === "development"
 
 module.exports = {
   entry: [
@@ -28,6 +28,15 @@ module.exports = {
       templateParameters: {
         name: "daan balm",
         projects: [
+          {
+            date: "9 / 2022",
+            name: "Simpeldeb landing page",
+            description:
+              "A landing page for simpeldeb",
+            tech: "JAVASCRIPT | BULMA | SCSS | NUXT",
+            link: "https://simpeldeb.com/",
+            image: "images/simpeldeb-landing-page.png",
+          },
           {
             date: "2 / 2021",
             name: "Bewitt",
@@ -149,4 +158,4 @@ module.exports = {
       },
     ],
   },
-};
+}

@@ -3,7 +3,7 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
 
 // !!! Remove if testing
-console.log = () => {};
+console.log = () => { };
 
 (async () => {
   const { Loader } = await import("./classes/Loader");
@@ -30,6 +30,7 @@ console.log = () => {};
       "images/crest.png",
       "images/incaze.png",
       "images/bewitt.png",
+      "images/simpeldeb-landing-page.png",
       "icons/at.svg",
       "icons/github-alt.svg",
       "icons/linkedin-alt.svg",
