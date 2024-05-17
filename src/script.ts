@@ -2,8 +2,6 @@ import gsap from "gsap/gsap-core";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
 
-// !!! Remove if testing
-console.log = () => { };
 
 (async () => {
   const { Loader } = await import("./classes/Loader");
