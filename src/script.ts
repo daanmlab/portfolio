@@ -47,19 +47,7 @@ gsap.registerPlugin(ScrollToPlugin);
     delete e.dataset.src;
   });
 
-  // Scroll to element based on URL hash
-  const hash = window.location.hash;
-  if (hash) {
-    const element = document.querySelector(hash);
-    if (element) {
-      gsap.to(document.body, {
-        duration: 1,
-        scrollTo: element,
-        ease: "circ.inOut",
-      });
-    }
-  }
-
+  
   // @ts-ignore
   const { Gradient } = await import("./classes/pocoloco/index.js");
   new Gradient().initGradient("#Canvas");
@@ -112,6 +100,20 @@ gsap.registerPlugin(ScrollToPlugin);
   // Create cursor
   const { Cursor } = await import("./classes/Cursor");
   const cursor = new Cursor({});
+
+  // Scroll to element based on URL hash
+  const hash = window.location.hash;
+  if (hash) {
+    const element = document.querySelector(hash);
+    if (element) {
+      gsap.to(document.body, {
+        duration: 1,
+        scrollTo: element,
+        ease: "circ.inOut",
+      });
+    }
+  }
+
 })();
 
 // Styles
