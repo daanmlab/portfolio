@@ -103,10 +103,12 @@ gsap.registerPlugin(ScrollToPlugin);
 
   // Scroll to element based on URL hash
   const hash = window.location.hash;
+  console.log(hash);
   if (hash) {
     const element = document.querySelector(hash);
+    console.log(element);
     if (element) {
-      gsap.to(document.body, {
+      gsap.to(mainElement, {
         duration: 1,
         scrollTo: element,
         ease: "circ.inOut",
