@@ -29,6 +29,15 @@ module.exports = {
         name: "daan balm",
         projects: [
           {
+            date: "1 / 2024",
+            name: "Minishell project 42",
+            description:
+              "The Minishell project at 42 involves creating a simple version of a Unix shell. In this project, students learn to:\n\n\n- Execute basic shell commands\n- Handle input and output redirection\n- Manage processes and execute pipelines\n\nThe goal is to understand how a shell works by building one from scratch.",
+            tech: "C",
+            link: "https://github.com/tlouro-c/minishell",
+            image: "images/simpeldeb-landing-page.png",
+          },
+          {
             date: "9 / 2022",
             name: "Simpeldeb landing page",
             description:
