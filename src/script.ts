@@ -29,6 +29,8 @@ gsap.registerPlugin(ScrollToPlugin);
       "images/incaze.png",
       "images/bewitt.png",
       "images/simpeldeb-landing-page.png",
+      "images/so_long.png",
+      "images/minishell.jpeg",
       "icons/at.svg",
       "icons/github-alt.svg",
       "icons/linkedin-alt.svg",
