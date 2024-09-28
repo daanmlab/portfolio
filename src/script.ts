@@ -49,6 +49,7 @@ gsap.registerPlugin(ScrollToPlugin);
     delete e.dataset.src;
   });
 
+  
   // @ts-ignore
   const { Gradient } = await import("./classes/pocoloco/index.js");
   new Gradient().initGradient("#Canvas");
@@ -107,6 +108,22 @@ gsap.registerPlugin(ScrollToPlugin);
   // Create cursor
   const { Cursor } = await import("./classes/Cursor");
   const cursor = new Cursor({});
+
+  // Scroll to element based on URL hash
+  const hash = window.location.hash;
+  console.log(hash);
+  if (hash) {
+    const element = document.querySelector(hash);
+    console.log(element);
+    if (element) {
+      gsap.to(mainElement, {
+        duration: 1,
+        scrollTo: element,
+        ease: "circ.inOut",
+      });
+    }
+  }
+
 })();
 
 // Styles
