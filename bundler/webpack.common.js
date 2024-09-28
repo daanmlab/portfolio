@@ -32,7 +32,7 @@ module.exports = {
                         date: "1 / 2024",
                         name: "Minishell project 42",
                         description:
-                            "The Minishell project at 42 involves creating a simple version of a Unix shell. In this project, students learn to:\n\n\n- Execute basic shell commands\n- Handle input and output redirection\n- Manage processes and execute pipelines\n\nThe goal is to understand how a shell works by building one from scratch. \nI decided to make it my own by making the 'camera' follow the player and adding some depth perception.",
+                            "The Minishell project at 42 involves creating a simple version of a Unix shell.",
                         tech: "C",
                         link: "https://github.com/tlouro-c/minishell",
                         image: "images/minishell.jpeg",
@@ -40,10 +40,9 @@ module.exports = {
                     {
                         date: "11 / 2023",
                         name: "so_long project 42",
-                        description:
-                            "The so_long project at 42 involves creating a simple 2D game. In this project, students learn to:\n\n\n- Load textures and sprites\n- Handle user input\n- Manage game state\n- Implement basic game mechanics\n\nThe goal is to understand how a game engine works by building one from scratch. \nI decided to add my own twist to it by making the 'camera' follow the player and addind some depth perception.",
+                        description: `The so_long project at 42 involves creating a 2D game written in pure C.`,
                         tech: "C",
-                        link: "https://youtu.be/-qORQ_vFXmU",
+                        link: "https://github.com/daanmlab/so_long",
                         image: "images/so_long.png",
                     },
                     {
