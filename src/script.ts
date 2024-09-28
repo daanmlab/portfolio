@@ -90,9 +90,15 @@ gsap.registerPlugin(ScrollToPlugin);
         },
       },
       {
-        name: "CV",
+        name: "CV - NL",
         onClick: () => {
-          window.open("/documents/CV_DB.pdf", "_blank");
+          window.open("/documents/static/documents/CV - Daan Balm - nl.pdf", "_blank");
+        },
+      },
+      {
+        name: "CV - EN",
+        onClick: () => {
+          window.open("/documents/static/documents/CV - Daan Balm - en.pdf", "_blank");
         },
       },
     ],
